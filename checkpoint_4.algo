@@ -1,0 +1,26 @@
+function isPalindrome(word : STRING , left,right:INTEGER) : BOOLEAN
+
+ // Stop condition
+    if (word.length <= 1) 
+    return true;
+    END_IF
+
+// Initialize left and right pointers
+
+    let left = 0;
+    let right = word.length - 1;
+    // Loop while left pointer is less than right pointer
+    while (left < right) DO
+      // Compare characters at left and right pointers
+    if (word[left] !== word[right]) THEN
+        return false;
+    ELSE
+      // Move pointers towards the middle
+    left := left+1;
+    right := right-1;
+    END_IF
+    END_WHILE   
+    // If the loop completes, the word is a palindrome
+    return true;
+END
+
